@@ -24,8 +24,8 @@ import { motion } from "framer-motion";
       answer: "-Because he couldn't tuple his income"
     },
     {
-      question: "Why did Git break up with Github💔?",
-      answer: "-Because it needed more space"
+      question: "Why did Git break up with Github?",
+      answer: "-Because it needed more space💔"
     },
     {
       question: "How does a coffee-loving dev debug?",
@@ -33,11 +33,11 @@ import { motion } from "framer-motion";
     },
     {
       question: "Why did the developer go broke?",
-      answer: "-Because he used up all his cache."
+      answer: "-Because he used up all his cache (cash)^_^"
     },
     {
       question: "How do you comfort a JavaScript bug?",
-      answer: "-You console it."
+      answer: "-You console it🫂"
     },
   ];
 
