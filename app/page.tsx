@@ -1,7 +1,7 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-  
   const jokes = [
     {
     question: "Why do progrramers prefer dark mode?",
@@ -40,6 +40,7 @@ import React, { useState } from 'react';
       answer: "-You console it."
     },
   ];
+
 export default function Home() {
   const [currentJoke, setCurrentJoke] = useState(jokes[0])
   
@@ -58,45 +59,45 @@ const copyJoke = async () => {
 
   return (
     <div>
-    <main className="min-h-screen bg-yellow-100 flex items-center justify-center relative overflow-hidden">
-      <span className="absolute top-6 left-8 text-3xl">🧑🏻‍💻</span>
-      <span className="absolute top-6 right-8 text-3xl">🧠</span>
-      <span className="absolute bottom-6 left-10 text-3xl">😊</span>
-      <span className="absolute bottom-6 right-10 text-3xl">🐞</span>
-      <span className="absolute top-1/3 right-6 text-3xl">☕</span>
-      <span className="absolute top-1/3 left-6 text-3xl">🛠️</span>
-      <span className="absolute bottom-1/3 right-10 text-3xl">🤣</span>
-      <span className="absolute bottom-1/3 left-10 text-3xl">❤️</span>
-      
-      <div className="max-w-xl w-full text-center space-y-6 z-10">
-        <h1 className="text-4xl font-bold text-gray-900">Dev Joke<br />Generator</h1>
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-800 to-gray-900 text-white
+    flex items-center justify-center px-4">
 
-        <div className="bg-white p-6 rounded-3xl shadow-md min-h-[120px]
-        space-y-2 text-lg text-gray-800">
-          <p>{currentJoke.question}</p>
+      <div className="max-w-xl w-full text-center space-y-6 z-10">
+        <h1 className="text-4xl font-bold text-white drop-shadow-lg">Dev Joke<br />Generator</h1>
+
+        <motion.div
+        key={currentJoke.question} initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+
+         className="bg-white/10 backdrop-blur-md p-6 rounded-3x1 shadow-xl min-h-[120px]
+         space-y-2 text-lg text-white border border-white/20">
+          <p
+          className="text-xl">{currentJoke.question}</p>
           <p
           className="font-semibold">{currentJoke.answer}</p>
-        </div>
+        </motion.div>
 
       
         <button 
         onClick={() => getRandomJoke()}
-        className="bg-black text-white px-6 py-3 rounded-full text-lg font-semibold
-        hover:bg-gray-800 transition-all">
+        className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md transition-all
+        duration-200 active:scale-95 hover:brightness-110 hover:scale-105">
           
           Crack Me Up
         </button>
 
         <button
         onClick={copyJoke}
-        className="bg-gray-200 text-gray-800 px-4 py-2 text-sm rounded-full hover:bg-gray-300 transition-all">
+        className="bg-white/10 p-2 text-xl rounded-lg shadow-md hover:bg-white/20 transition-all duration-200
+        active:scale-95 hover:scale-105">
 
-          Copy Joke
+          📋
         </button>
       </div>
     </main>
 
-    <footer className="text-center py-4 text-sm text-gray-500">
+    <footer className="text-center py-4 text-sm text-gray-400">
       Built with☕& bad jokes by
       <span className="font-medium">Alok SIngh</span>
     </footer>
